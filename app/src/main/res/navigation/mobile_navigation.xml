@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/nav_transform"
-        android:name="com.seo.visualexhibition.ui.transform.TransformFragment"
-        android:label="@string/menu_transform"
-        tools:layout="@layout/fragment_transform" />
+        android:name="com.seo.visualexhibition.ui.topic.TopicFragment"
+        android:label="@string/menu_topic"
+        tools:layout="@layout/fragment_topic" />
 
     <fragment
         android:id="@+id/nav_reflow"
