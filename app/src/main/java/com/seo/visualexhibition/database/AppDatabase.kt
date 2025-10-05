@@ -23,14 +23,19 @@ abstract class AppDatabase : RoomDatabase() {
                     topicDao.deleteAll()
                     val sampleTopics = listOf(
                         Topic(
-                            topicName = "Chủ đề 1",
+                            topicName = "Chủ đề 1.",
                             topicDescription = "Đây là mô tả ngắn cho chủ đề 1. Nếu quá dài thì sẽ bị cắt.Đây là mô tả ngắn cho chủ đề 1. Nếu quá dài thì sẽ bị cắt. Đây là mô tả ngắn cho chủ đề 1. Nếu quá dài thì sẽ bị cắt. Đây là mô tả ngắn cho chủ đề 1. Nếu quá dài thì sẽ bị cắt.",
                             imageSrc = "/storage/emulated/0/Download/sample1.jpg",
                         ),
                         Topic(
                             topicName = "Chủ đề 2.",
                             topicDescription = "Một mô tả khác cho chủ đề 2. Mục đích để test hiển thị nhiều dòng.",
-                            imageSrc = "/storage/emulated/0/Download/sample2.jpg",
+                            imageSrc = "/storage/emulated/0/Download/sample3.jpg",
+                        ),
+                        Topic(
+                            topicName = "Chủ đề 3.",
+                            topicDescription = "Một mô tả khác cho chủ đề 2. Mục đích để test hiển thị nhiều dòng.",
+                            imageSrc = "/storage/emulated/0/Download/sample3.jpg",
                         )
                     )
                     topicDao.insert(sampleTopics)

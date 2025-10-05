@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
     app:cardCornerRadius="12dp"
-    app:cardElevation="4dp"
+    app:cardElevation="6dp"
     android:foreground="?attr/selectableItemBackground"
     android:clickable="true"
     android:focusable="true">
@@ -18,12 +18,13 @@
 
         <ImageView
             android:id="@+id/imgTopic"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="196dp"
+            android:layout_height="260dp"
             android:scaleType="centerCrop"
             android:contentDescription="@string/todo"
-            android:background="@drawable/avatar_1"
-            android:layout_marginEnd="12dp" />
+            android:src="@drawable/avatar_2"
+            android:background="#FFE0E0"
+            android:layout_marginEnd="12dp"/>
 
         <LinearLayout
             android:layout_width="0dp"
@@ -36,25 +37,30 @@
                 android:id="@+id/tvTopicTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Văn hóa Việt Nam"
+                android:text="Chủ đề mẫu"
                 android:textColor="#FFD700"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:textSize="24sp"
+                android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/tvTopicContent"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Mô tả ngắn về chủ đề ở đây..."
-                android:textColor="#EEEEEE"
-                android:textSize="15sp"
+                android:text="Đây là mô tả ngắn cho chủ đề. Nếu dài sẽ bị cắt..."
+                android:textColor="#000"
+                android:textSize="21sp"
                 android:layout_marginTop="6dp"
-                android:layout_marginBottom="8dp" />
+                android:layout_marginBottom="8dp"
+                android:maxLines="3"
+                android:ellipsize="end"
+                android:scrollHorizontally="false"
+                android:gravity="top" />
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:gravity="end">
 
                 <ImageButton
                     android:id="@+id/btnEdit"
@@ -75,6 +81,7 @@
                     android:contentDescription="@string/todo"
                     app:tint="#FF4444" />
             </LinearLayout>
+
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>
