@@ -13,15 +13,7 @@ class ImageRepository(private val imageDao: ImageDao) {
 
     @WorkerThread
     @JvmName("insertDisplayImage")
-    suspend fun insert(displayImage: DisplayImage) {
-        imageDao.insert(displayImage);
-    }
-
-    @WorkerThread
-    @JvmName("insertDisplayImageList")
-    suspend fun insert(displayImages: List<DisplayImage>) {
-        imageDao.insert(displayImages);
-    }
+    suspend fun insert(displayImage: DisplayImage) : Long = imageDao.insert(displayImage)
 
     @WorkerThread
     @JvmName("updateDisplayImage")
@@ -37,8 +29,8 @@ class ImageRepository(private val imageDao: ImageDao) {
 
     @WorkerThread
     @JvmName("insertImageField")
-    suspend fun insert(imageField: ImageField) {
-        imageDao.insert(imageField);
+    suspend fun insert(imageFields: List<ImageField>) {
+        imageDao.insert(imageFields);
     }
 
     @WorkerThread

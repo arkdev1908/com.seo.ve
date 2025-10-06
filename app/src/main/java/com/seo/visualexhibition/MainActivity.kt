@@ -3,7 +3,6 @@ package com.seo.visualexhibition
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
@@ -32,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         binding.navView?.let {
             appBarConfiguration = AppBarConfiguration(
                 setOf(
-                    R.id.nav_transform, R.id.nav_reflow, R.id.nav_slideshow, R.id.nav_settings
+                    R.id.nav_topic, R.id.nav_template, R.id.nav_image, R.id.nav_settings
                 ),
                 binding.drawerLayout
             )
@@ -43,7 +42,7 @@ class MainActivity : AppCompatActivity() {
         binding.appBarMain.contentMain.bottomNavView?.let {
             appBarConfiguration = AppBarConfiguration(
                 setOf(
-                    R.id.nav_transform, R.id.nav_reflow, R.id.nav_slideshow
+                    R.id.nav_topic, R.id.nav_template, R.id.nav_image
                 )
             )
             setupActionBarWithNavController(navController, appBarConfiguration)

@@ -20,13 +20,16 @@ interface TemplateDao {
     @Delete
     suspend fun delete(template: Template)
 
+    @Query("DELETE FROM template_fields WHERE template_id = :id")
+    suspend fun deleteByTemplateId(id: Long)
+
     @Query("SELECT * FROM templates ORDER BY template_id")
     fun all(): Flow<List<Template>>
 
     @Query("SELECT * FROM templates WHERE template_id = :id")
     fun template(id: Long): Flow<Template>
 
-    @Query("SELECT * FROM template_fields WHERE template_id = :id ORDER BY order_number")
+    @Query("SELECT * FROM template_fields WHERE template_id = :id ORDER BY field_id")
     fun allByTemplateId(id: Long): Flow<List<TemplateField>>
 
     @Insert

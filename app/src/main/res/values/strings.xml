@@ -39,4 +39,7 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
     <string name="save">Lưu</string>
+    <string name="add_image">Thêm ảnh</string>
+    <string name="adđ_images">Thêm nhiều ảnh</string>
+    <string name="select_template">Chọn Mẫu</string>
 </resources>

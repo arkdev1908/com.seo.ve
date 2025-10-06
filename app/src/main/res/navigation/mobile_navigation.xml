@@ -3,29 +3,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_transform">
+    app:startDestination="@+id/nav_topic">
 
     <fragment
-        android:id="@+id/nav_transform"
+        android:id="@+id/nav_topic"
         android:name="com.seo.visualexhibition.ui.topic.TopicFragment"
         android:label="@string/menu_topic"
         tools:layout="@layout/fragment_topic" />
 
     <fragment
-        android:id="@+id/nav_reflow"
-        android:name="com.seo.visualexhibition.ui.reflow.ReflowFragment"
+        android:id="@+id/nav_template"
+        android:name="com.seo.visualexhibition.ui.template.TemplateFragment"
         android:label="@string/menu_reflow"
-        tools:layout="@layout/fragment_reflow" />
+        tools:layout="@layout/fragment_template" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.seo.visualexhibition.ui.slideshow.SlideshowFragment"
+        android:id="@+id/nav_image"
+        android:name="com.seo.visualexhibition.ui.image.ImageFragment"
         android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_image" />
 
     <fragment
         android:id="@+id/nav_settings"
-        android:name="com.seo.visualexhibition.ui.settings.SettingsFragment"
+        android:name="com.seo.visualexhibition.ui.event.SettingsFragment"
         android:label="@string/menu_settings"
         tools:layout="@layout/fragment_settings" />
 </navigation>

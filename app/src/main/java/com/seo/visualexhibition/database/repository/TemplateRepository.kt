@@ -18,6 +18,12 @@ class TemplateRepository(private val templateDao: TemplateDao) {
     }
 
     @WorkerThread
+    @JvmName("deleteByTemplateId")
+    suspend fun deleteByTemplateId(id: Long) {
+        return templateDao.deleteByTemplateId(id)
+    }
+
+    @WorkerThread
     @JvmName("insertTemplate")
     suspend fun insert(template: Template) {
         templateDao.insert(template)

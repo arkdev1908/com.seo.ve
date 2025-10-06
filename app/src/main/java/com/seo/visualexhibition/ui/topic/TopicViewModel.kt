@@ -12,6 +12,10 @@ import kotlinx.coroutines.launch
 class TopicViewModel(private val repository: TopicRepository) : ViewModel() {
     val all: LiveData<List<Topic>> = repository.allTopics.asLiveData()
 
+    fun insert(topic: Topic) = viewModelScope.launch {
+        repository.insert(topic)
+    }
+
     fun delete(topic: Topic) = viewModelScope.launch {
         repository.delete(topic)
     }

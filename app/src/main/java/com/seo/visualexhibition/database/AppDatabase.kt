@@ -5,14 +5,23 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
+import com.seo.visualexhibition.data.model.DisplayImage
+import com.seo.visualexhibition.data.model.ImageField
+import com.seo.visualexhibition.data.model.Template
+import com.seo.visualexhibition.data.model.TemplateField
 import com.seo.visualexhibition.data.model.Topic
+import com.seo.visualexhibition.database.dao.ImageDao
+import com.seo.visualexhibition.database.dao.TemplateDao
 import com.seo.visualexhibition.database.dao.TopicDao
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
-@Database(entities = [Topic::class], version = 1, exportSchema = false)
+@Database(entities = [Topic::class, Template::class,
+    TemplateField::class, DisplayImage::class, ImageField::class], version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun topicDao(): TopicDao
+    abstract fun templateDao(): TemplateDao
+    abstract fun imageDao(): ImageDao
 
     private class AppDatabaseCallback(private val scope: CoroutineScope) : Callback() {
         override fun onCreate(db: SupportSQLiteDatabase) {
@@ -20,6 +29,7 @@ abstract class AppDatabase : RoomDatabase() {
             INSTANCE?.let { database ->
                 scope.launch {
                     val topicDao = database.topicDao()
+                    val templateDao = database.templateDao()
                     topicDao.deleteAll()
                     val sampleTopics = listOf(
                         Topic(
@@ -38,6 +48,10 @@ abstract class AppDatabase : RoomDatabase() {
                             imageSrc = "/storage/emulated/0/Download/sample3.jpg",
                         )
                     )
+                    val template = Template(
+                        templateName = "Test"
+                    )
+                    templateDao.insert(template)
                     topicDao.insert(sampleTopics)
                 }
             }
